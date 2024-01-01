@@ -12,7 +12,10 @@
     <script src="react/react.js"></script>
     <script src="react/react-dom.js"></script>
     <script>
-        ReactDOM.render(React.createElement('h1', null, 'Hello, World!'), document.getElementById('app')); 
+        ReactDOM.render(
+            React.createElement('h1', {id:'heading',}, 'Hello, World!'), 
+            document.getElementById('app')
+        ); 
     </script>
 </body>
 </html>
