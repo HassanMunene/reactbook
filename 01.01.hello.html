@@ -13,7 +13,11 @@
     <script src="react/react-dom.js"></script>
     <script>
         ReactDOM.render(
-            React.createElement('h1', {id:'heading',}, 'Hello, World!'), 
+            React.createElement(
+                'h1', 
+                {id:'heading',}, 
+                React.createElement('span', null, 'Hello', React.createElement('em', null, 'wonderful')),' World!'
+            ), 
             document.getElementById('app')
         ); 
     </script>
