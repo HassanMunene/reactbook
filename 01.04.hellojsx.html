@@ -12,13 +12,13 @@
     <script src="react/react-dom.js"></script>
     <script src="react/babel.js"></script>
     <script type="text/babel">
-        class myComponent extends React.Component {
+        class MyComponent extends React.Component {
             render() {
-                return React.createElement('span', null, 'Iam so custom with react');
+                return <span>My name is <em>{this.props.name}</em></span>;
             }
         }
         ReactDOM.render(
-            React.createElement(myComponent),
+            <MyComponent name="Hassan" />,
             document.getElementById('app')
         );
     </script>
