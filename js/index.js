@@ -52,8 +52,14 @@ ReactDOM.render(
     document.getElementById('nav-section')
 );
 
-const rootDiv = document.getElementById('root');
-const heading = document.createElement('h1');
-const text = document.createTextNode('hello im learning react!');
-heading.appendChild(text);
-rootDiv.appendChild(heading);
+const page = (
+    <div>
+        <h1 className="Header">Hello im learning React!</h1>
+        <p className="para">This is the sibling paragraph but for me to render siblings i need to have one parent element covering all of them</p>
+    </div>
+);
+console.log(page);
+ReactDOM.render(
+    page, 
+    document.getElementById('root')
+);
