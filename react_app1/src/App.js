@@ -1,12 +1,9 @@
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <button>-</button>
-      <button>0</button>
-      <button>+</button>
-    </div>
-  );
+const App = () => {
+    return (
+        <h1>Yoo man!</h1>
+    );
 }
+
 export default App;
