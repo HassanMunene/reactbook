@@ -1,10 +1,11 @@
 import React from 'react';
+import logo from './assets/react.svg'
 
 function Header () {
     return (
         <header className="nav-container">
             <nav className="navbar">
-                <img src="img/react-logo.svg" alt="react-logo" className="nav-logo"/>
+                <img src={logo} alt="react-logo" className="nav-logo"/>
                 <ul className="nav-items">
                     <li className="item">Pricing</li>
                     <li className="item">About</li>
