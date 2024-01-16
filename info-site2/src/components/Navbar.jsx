@@ -2,7 +2,10 @@ import React from 'react';
 
 function Navbar () {
     return (
-        <h1>Navbar component here pal</h1>
+        <div>
+            <h1>ReactFacts</h1>
+            <h2>React Course - project1</h2>
+        </div>
     );
 }
 
