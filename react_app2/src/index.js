@@ -15,18 +15,15 @@ const BookList = () => {
 }
 
 const Book = () => {
+    const title = 'First Lie Wins';
+    const author = 'Ashley Elston'
     return (
         <article className='book'>
-            <Image />
-            <Title />
-            <Author />
+            <img src='https://images-na.ssl-images-amazon.com/images/I/810CZ-9akdL._AC_UL600_SR600,400_.jpg' alt='First lie wins'/>
+            <h2>{title}</h2>
+            <h4>{author}</h4>
         </article>
     )
-}
-const Image = () => <img src='https://images-na.ssl-images-amazon.com/images/I/810CZ-9akdL._AC_UL600_SR600,400_.jpg' alt='First lie wins'/>
-const Title = () => <h2>First Lie Wins</h2>
-const Author = () => {
-    return <h4>Ashley Elston</h4>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -36,3 +36,9 @@ body {
     margin-top: 1rem;
     font-size: 1rem;
 }
+.book h4 {
+    font-size: 0.75rem;
+    color: #617d98;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+}
