@@ -9,12 +9,14 @@ import './index.css'
 
 const BookList = () => {
     return (
+        <>
+        <Header />
         <section className='booklist'>
-            <Header />
             {booksArray.map((book, index) => {
                 return <Book {...book} key={book.id} index={index + 1} />
             })}
         </section>
+        </>
     )
 }
 
