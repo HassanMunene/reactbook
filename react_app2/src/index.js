@@ -37,7 +37,6 @@ const booksArray = [
 const BookList = () => {
     return (
         <section className='booklist'>
-            <EventExamples />
             {booksArray.map((book) => {
                 return <Book {...book} key={book.id} />
             })}
@@ -47,37 +46,41 @@ const BookList = () => {
 
 const Book = (props) => {
     //console.log(props)
-    const { img, alt, title, author } = props
+    const { img, alt, title, author } = props;
+    const logTitle = () => {
+        console.log(title);
+    }
     return (
         <article className='book'>
             <img src={img} alt={alt}/>
             <h2>{title}</h2>
+            <button onClick={logTitle}>Log title</button>
             <h4>{author}</h4>
         </article>
     )
 }
-const EventExamples = () => {
-    const handleFormInput = () => {
-        console.log('Handle form input');
-    }
-    const handleButtonClick = () => {
-        alert('handle button click.');
-    }
-    return (
-        <section>
-            <form>
-                <h2>Typical form</h2>
-                <input 
-                    type='text' 
-                    name='example' 
-                    onChange={handleFormInput} 
-                    style={{ margin: '1rem 0' }} 
-                />
-            </form>
-            <button onClick={handleButtonClick}>Click me</button>
-        </section>
-    )
-}
+// const EventExamples = () => {
+//     const handleFormInput = () => {
+//         console.log('Handle form input');
+//     }
+//     const handleButtonClick = () => {
+//         alert('handle button click.');
+//     }
+//     return (
+//         <section>
+//             <form>
+//                 <h2>Typical form</h2>
+//                 <input 
+//                     type='text' 
+//                     name='example' 
+//                     onChange={handleFormInput} 
+//                     style={{ margin: '1rem 0' }} 
+//                 />
+//             </form>
+//             <button onClick={handleButtonClick}>Click me</button>
+//         </section>
+//     )
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<BookList />)
