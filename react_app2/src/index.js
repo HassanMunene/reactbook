@@ -35,10 +35,12 @@ const booksArray = [
 ]
 
 const BookList = () => {
+    const var1 = 'Hello there'
+    const func = () => console.log(var1);
     return (
         <section className='booklist'>
             {booksArray.map((book) => {
-                return <Book {...book} key={book.id} />
+                return <Book {...book} key={book.id} func={func}/>
             })}
         </section>
     )
@@ -46,15 +48,12 @@ const BookList = () => {
 
 const Book = (props) => {
     //console.log(props)
-    const { img, alt, title, author } = props;
-    const logTitle = () => {
-        console.log(title);
-    }
+    const { img, alt, title, author, func } = props;
     return (
         <article className='book'>
             <img src={img} alt={alt}/>
             <h2>{title}</h2>
-            <button onClick={logTitle}>Log title</button>
+            <button onClick={func}>click me</button>
             <h4>{author}</h4>
         </article>
     )
