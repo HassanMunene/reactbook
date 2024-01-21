@@ -3,71 +3,50 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css'
 
-// const firstBook = {
-//     title: 'First Lie Wins',
-//     author: 'Ashley Elston',
-//     img: 'https://images-na.ssl-images-amazon.com/images/I/810CZ-9akdL._AC_UL600_SR600,400_.jpg',
-//     alt: 'First Lie Wins'
-// }
-// const secondBook = {
-//     title: 'Fourth Wing',
-//     author: 'Rebecca Yarros',
-//     img: 'https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg',
-//     alt: 'Fourth Wing'
-// }
-// const thirdBook = {
-//     title: 'Iron Flame',
-//     author: 'Rebecca Yarros',
-//     img: 'https://images-na.ssl-images-amazon.com/images/I/917Bc9C1MlL._AC_UL600_SR600,400_.jpg',
-//     alt: 'Iron Flame'
-// }
-// const fourthBook = {
-//     title: 'The Bible in 52 Weeks',
-//     author: 'Dr. Kimberly D. Moore',
-//     img: 'https://images-na.ssl-images-amazon.com/images/I/913KWawg9gL._AC_UL600_SR600,400_.jpg',
-//     alt: 'The Bible in 52 Weeks'
-// }
-
 const booksArray = [
     {
         title: 'First Lie Wins',
         author: 'Ashley Elston',
         img: 'https://images-na.ssl-images-amazon.com/images/I/810CZ-9akdL._AC_UL600_SR600,400_.jpg',
-        alt: 'First Lie Wins'
+        alt: 'First Lie Wins',
+        id: 1
     },
     {
         title: 'Fourth Wing',
         author: 'Rebecca Yarros',
         img: 'https://images-na.ssl-images-amazon.com/images/I/91n7p-j5aqL._AC_UL600_SR600,400_.jpg',
-        alt: 'Fourth Wing'
+        alt: 'Fourth Wing',
+        id: 2
     },
     {
         title: 'Iron Flame',
         author: 'Rebecca Yarros',
         img: 'https://images-na.ssl-images-amazon.com/images/I/917Bc9C1MlL._AC_UL600_SR600,400_.jpg',
-        alt: 'Iron Flame'
+        alt: 'Iron Flame',
+        id: 3
     },
     {
         title: 'The Bible in 52 Weeks',
         author: 'Dr. Kimberly D. Moore',
         img: 'https://images-na.ssl-images-amazon.com/images/I/913KWawg9gL._AC_UL600_SR600,400_.jpg',
-        alt: 'The Bible in 52 Weeks'
+        alt: 'The Bible in 52 Weeks',
+        id: 4
     },
 ]
-
 
 const BookList = () => {
     return (
         <section className='booklist'>
+            <EventExamples />
             {booksArray.map((book) => {
-                return <Book img={book.img} alt={book.alt} title={book.title} author={book.author}/>
+                return <Book {...book} key={book.id} />
             })}
         </section>
     )
 }
 
 const Book = (props) => {
-    console.log(props)
+    //console.log(props)
     const { img, alt, title, author } = props
     return (
         <article className='book'>
@@ -75,6 +54,28 @@ const Book = (props) => {
             <h2>{title}</h2>
             <h4>{author}</h4>
         </article>
+    )
+}
+const EventExamples = () => {
+    const handleFormInput = () => {
+        console.log('Handle form input');
+    }
+    const handleButtonClick = () => {
+        alert('handle button click.');
+    }
+    return (
+        <section>
+            <form>
+                <h2>Typical form</h2>
+                <input 
+                    type='text' 
+                    name='example' 
+                    onChange={handleFormInput} 
+                    style={{ margin: '1rem 0' }} 
+                />
+            </form>
+            <button onClick={handleButtonClick}>Click me</button>
+        </section>
     )
 }
 
