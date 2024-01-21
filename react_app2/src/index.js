@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {booksArray} from './booksData';
 import Book from './book';
+import Header from './header';
 
 import './index.css'
 
@@ -9,8 +10,9 @@ import './index.css'
 const BookList = () => {
     return (
         <section className='booklist'>
-            {booksArray.map((book) => {
-                return <Book {...book} key={book.id} />
+            <Header />
+            {booksArray.map((book, index) => {
+                return <Book {...book} key={book.id} index={index + 1} />
             })}
         </section>
     )

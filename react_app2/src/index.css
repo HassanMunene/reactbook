@@ -10,6 +10,11 @@ body {
     color: #222;
 }
 
+.headerContainer {
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+}
 .booklist {
     width: 90vw;
     max-width: 1170px;
@@ -27,6 +32,9 @@ body {
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
+}
+.book .book_number {
+    position: absolute;
 }
 .book img {
     width: 100%;
