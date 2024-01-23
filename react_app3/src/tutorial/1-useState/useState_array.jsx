@@ -1,11 +1,19 @@
 import { data } from "../../data";
+import { useState } from "react";
 
 const People = () => {
-    const dataArray = data.map((person) => {
+    const [personVisibilities, setPersonVisibility] = useState(data.map((person) => true))
+    //console.log(personVisibility);
+
+    const changeDisplay = (personID) => {
+        setPersonVisibility((prevVisibility) => prevVisibility.map((isVisible, index) => index === personID ? !isVisible: isVisible));
+    }
+
+    const dataArray = data.map((person, index) => {
         return (
-            <div className="person">
+            <div className="person" key={person.id} style={{ display: personVisibilities[index] ? 'block':'none'}}>
                 <h3>{person.name}</h3>
-                <button type="button" className="btn">Remove</button>
+                <button type="button" className="btn" onClick={() => changeDisplay(person.id)}>Remove</button>
             </div>
         )
     })
