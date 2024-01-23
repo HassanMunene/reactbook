@@ -79,6 +79,33 @@ body {
     width: 80vw;
     max-width: 500px;
     margin: 3rem auto;
+    padding: 2rem 2.5rem;
     background-color: var(--white);
     box-shadow: var(--shadow-2);
+}
+.people {
+    margin-top: 1rem;
+}
+.person {
+    background-color: var(--grey-200);
+    margin-bottom: .5rem;
+    padding: 2rem;
+    border-radius: var(--borderRadius);
+}
+.person h3 {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.btn {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--primary-500);
+    border: transparent;
+    border-radius: var(--borderRadius);
+    letter-spacing: var(--letterSpacing);
+    padding: 0.38rem 0.75rem;
+    box-shadow: var(--shadow-1);
+    text-transform: capitalize;
+    display: inline-block;
 }
