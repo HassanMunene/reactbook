@@ -2,12 +2,12 @@ import { useState } from "react";
 import { data } from "../../data";
 
 const PersonDetails = () => {
-    const [people, setPerson] = useState(data)
     let num = 1;
+    const [people, setPeople] = useState(data)
+    let [person, setPerson] = useState(data.find((person) => person.id === num))
     let newID = 1;
-    let person = people.find((guy1) => guy1.id === num);
-    const changePerson = (num) => {
-        newID = newID + num
+    const changePerson = (index) => {
+        newID = newID + index;
         //console.log(people);
         person = people.find((guy) => {
             //console.log(person.id)
@@ -16,6 +16,7 @@ const PersonDetails = () => {
                 return guy
             }
         })
+        setPerson(person)
         console.log(person)
     }
     return (
