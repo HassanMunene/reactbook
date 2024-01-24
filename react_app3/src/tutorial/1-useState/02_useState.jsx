@@ -2,14 +2,12 @@ import { useState } from "react";
 import { data } from "../../data";
 
 const PersonDetails = () => {
-    let num = 1;
-    const [people, setPeople] = useState(data)
-    let [person, setPerson] = useState(data.find((person) => person.id === num))
-    let newID = 1;
-    const changePerson = (index) => {
-        newID = newID + index;
+    let ID = 1;
+    let [person, setPerson] = useState(data.find((person) => person.id === ID))
+    let newID = person.id + 1;
+    const changePerson = (index) => {        
         //console.log(people);
-        person = people.find((guy) => {
+        person = data.find((guy) => {
             //console.log(person.id)
             if (guy.id === newID) {
                 //console.log(guy)
@@ -28,7 +26,7 @@ const PersonDetails = () => {
                 <div><h3 className="name">Hobby: {person.hobby}</h3></div>
             </div>
             <div>
-                <button className="btn" onClick={() => changePerson(num)}>Show another</button>
+                <button className="btn" onClick={() => changePerson(newID)}>Show another</button>
             </div>
         </div>
     )
