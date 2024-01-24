@@ -3,10 +3,15 @@ import { useState } from "react";
 
 const People = () => {
     const [personVisibilities, setPersonVisibility] = useState(data.map((person) => true))
+    const [peopleVisibility, setPeopleVisibility] = useState(true);
     //console.log(personVisibility);
 
     const changeDisplay = (personID) => {
         setPersonVisibility((prevVisibility) => prevVisibility.map((isVisible, index) => index === personID ? !isVisible: isVisible));
+    }
+    const changeAllDisplay = () => {
+        console.log('clear all clicked')
+        setPeopleVisibility(!peopleVisibility);
     }
 
     const dataArray = data.map((person, index) => {
@@ -21,7 +26,8 @@ const People = () => {
         <div className="container">
             <h2>useState Array Example Mate!</h2>
             <div>Our array will be here</div>
-            <div className="people">{dataArray}</div>
+            <div className="people" style={{display: peopleVisibility ? 'block': 'none'}}>{dataArray}</div>
+            <button className="btn" onClick={changeAllDisplay}>clear all</button>
         </div>
     )
 }
