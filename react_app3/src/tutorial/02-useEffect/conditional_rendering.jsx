@@ -12,6 +12,11 @@ const Example4 = () => {
             try {
                 const response = await fetch(url);
                 //console.log(response.json());
+                if (!response.ok) {
+                    setIsError(true);
+                    setIsLoading(false);
+                    return;
+                }
                 const user = await response.json();
                 setUser(user);
             } catch (error) {
