@@ -4,8 +4,10 @@ const Gotcha = () => {
     const [num, setNum] = useState(0);
 
     const counter = () => {
-        setNum(num + 1)
-        console.log(num)
+        setNum((prevState) => {
+            const newState = prevState + 1
+            return newState
+        })
     }
     return (
         <div className="container">

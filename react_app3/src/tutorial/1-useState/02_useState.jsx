@@ -5,6 +5,8 @@ const PersonDetails = () => {
     let ID = 1;
     let [person, setPerson] = useState(data.find((person) => person.id === ID))
     let newID = person.id + 1;
+    //const [nextPerson, setNextPerson] = useState(data.find((person) => person.id === newID))
+    //console.log(nextPerson.id, newID)
     const changePerson = (index) => {        
         //console.log(people);
         person = data.find((guy) => {
@@ -14,8 +16,12 @@ const PersonDetails = () => {
                 return guy
             }
         })
+        if (person === undefined) {
+            person = data.find((guy) => guy.id === 1);
+            setPerson(person);
+        }
         setPerson(person)
-        console.log(person)
+        //console.log(person)
     }
     return (
         <div className="container">
@@ -26,7 +32,7 @@ const PersonDetails = () => {
                 <div><h3 className="name">Hobby: {person.hobby}</h3></div>
             </div>
             <div>
-                <button className="btn" onClick={() => changePerson(newID)}>Show another</button>
+                <button className="btn" onClick={() => changePerson(newID)}>Show next person</button>
             </div>
         </div>
     )

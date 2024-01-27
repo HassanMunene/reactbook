@@ -1,10 +1,9 @@
-import ErrorExample from "./tutorial/1-useState/error_example";
-import People from "./tutorial/1-useState/useState_array";
+import Example3 from "./tutorial/02-useEffect/2-fetch";
 
 function App() {
   return (
     <>
-      <People />
+    <Example3 />
     </>
   )
 }
